@@ -4,14 +4,14 @@ steps:
       [
         "build",
         "-t",
-        "us-central1-docker.pkg.dev/kubassignment-441102/kub-assignment/kubcontainer2:latest",
+        "us-central1-docker.pkg.dev/kubassignment-441102/kub-assignment/kubcontainer2",
         ".",
       ]
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
         "push",
-        "us-central1-docker.pkg.dev/kubassignment-441102/kub-assignment/kubcontainer2:latest",
+        "us-central1-docker.pkg.dev/kubassignment-441102/kub-assignment/kubcontainer2",
       ]
   - name: "gcr.io/cloud-builders/gcloud"
     entrypoint: "bash"
@@ -25,12 +25,12 @@ steps:
       [
         "run",
         "--filename=deployment-kubcontainer2.yaml",
-        "--image=us-central1-docker.pkg.dev/kubassignment-441102/kub-assignment/kubcontainer2:latest",
+        "--image=us-central1-docker.pkg.dev/kubassignment-441102/kub-assignment/kubcontainer2",
         "--location=us-central1",
-        "--cluster=k8-cluster",
+        "--cluster=kub-assignment-cluster",
       ]
 images:
-  - "us-central1-docker.pkg.dev/kubassignment-441102/kub-assignment/kubcontainer2:latest"
+  - "us-central1-docker.pkg.dev/kubassignment-441102/kub-assignment/kubcontainer2"
 
 options:
   logging: CLOUD_LOGGING_ONLY
