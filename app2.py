@@ -3,7 +3,6 @@ import csv
 import os
 
 app = Flask(__name__)
-#checking trigger 1 for container 2->
 @app.route('/giveTotal', methods=['POST'])
 def process():
     try:  
